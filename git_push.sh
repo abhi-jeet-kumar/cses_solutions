@@ -6,8 +6,8 @@ git add .  # Stage all changes
 joke_json=$(curl -s -H "Accept: application/json" "https://v2.jokeapi.dev/joke/Programming?blacklistFlags=nsfw,religious,political,racist,sexist")
 echo "Raw JSON: $joke_json"  # Print the raw JSON
 
-# Extract the joke using sed (without grep -o)
-joke=$(echo "$joke_json" | sed 's/.*"joke": "\([^"]*\)".*/\1/')
+# Extract the joke using sed (refined regex)
+joke=$(echo "$joke_json" | sed 's/.*"joke": "\(.*\)".*/\1/') 
 echo "Joke: $joke"  # Print the extracted joke
 
 # Construct the commit message
