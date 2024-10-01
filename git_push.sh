@@ -10,4 +10,4 @@ git add .
 git commit -m "solved $num_files questions"
 
 # Push the changes to the master branch
-git push origin master
+git push origin main
