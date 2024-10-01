@@ -12,4 +12,4 @@ commit_message="solved some questions (and maybe told a joke): $joke"
 git commit -m "$commit_message"
 
 # Push the changes to the master branch
-git push origin master
+git push origin main
