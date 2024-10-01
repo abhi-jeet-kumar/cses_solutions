@@ -6,14 +6,14 @@ git add .  # Stage all changes
 joke_json=$(curl -s -H "Accept: application/json" "https://v2.jokeapi.dev/joke/Programming?blacklistFlags=nsfw,religious,political,racist,sexist")
 echo "Raw JSON: $joke_json"  # Print the raw JSON
 
-# Extract the joke based on the type (single or twopart)
-joke_type=$(echo "$joke_json" | sed 's/.*"type": "\(.*\)".*/\1/')
+# Extract the joke based on the type (single or twopart) using awk
+joke_type=$(echo "$joke_json" | awk -F'"' '{print $8}')
 if [[ "$joke_type" == "twopart" ]]; then
-  setup=$(echo "$joke_json" | sed 's/.*"setup": "\(.*\)".*/\1/')
-  delivery=$(echo "$joke_json" | sed 's/.*"delivery": "\(.*\)".*/\1/')
+  setup=$(echo "$joke_json" | awk -F'"' '{print $16}')
+  delivery=$(echo "$joke_json" | awk -F'"' '{print $24}')
   joke="$setup $delivery"
 else
-  joke=$(echo "$joke_json" | sed 's/.*"joke": "\(.*\)".*/\1/')
+  joke=$(echo "$joke_json" | awk -F'"' '{print $12}')
 fi
 
 echo "Joke: $joke"  # Print the extracted joke
