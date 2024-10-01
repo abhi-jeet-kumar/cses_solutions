@@ -12,4 +12,4 @@ commit_message="solved $file_list"
 git commit -m "$commit_message"
 
 # Push the changes to the master branch
-git push origin master
+git push origin main
