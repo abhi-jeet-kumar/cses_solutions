@@ -2,14 +2,14 @@
 
 git add .  # Stage all changes 
 
-# Get the list of staged filenames separated by commas
-file_list=$(git diff --cached --name-only | paste -sd ", ")
+# Get a random joke from the internet
+joke=$(curl -s https://icanhazdadjoke.com/ | sed -n 's/.*<p>\(.*\)<\/p>.*/\1/p')
 
 # Construct the commit message
-commit_message="solved $file_list"
+commit_message="solved some questions (and maybe told a joke): $joke"
 
 # Commit the changes
 git commit -m "$commit_message"
 
 # Push the changes to the master branch
-git push origin main
+git push origin master
