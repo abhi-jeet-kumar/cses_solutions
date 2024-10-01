@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# Get the number of files that will be staged
-num_files=$(git diff --cached --name-only | wc -l)
+git add .  # Stage files
 
-# Add all changes
-git add .
+sleep 3    # Introduce a 3-second delay
+
+num_files=$(git diff --cached --name-only | wc -l)
 
 # Commit the changes
 git commit -m "solved $num_files questions"
