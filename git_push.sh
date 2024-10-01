@@ -17,7 +17,6 @@ fi
 
 # Construct the commit message
 commit_message="solved some questions (and maybe told a joke): $joke"
-echo "Commit message: $commit_message" # Print the commit message
 
 # Commit the changes
 git commit -m "$commit_message"
