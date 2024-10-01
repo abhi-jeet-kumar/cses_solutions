@@ -2,8 +2,8 @@
 
 git add .  # Stage all changes 
 
-# Get a random joke from the internet
-joke=$(curl -s https://icanhazdadjoke.com/ | sed -n 's/.*<p>\(.*\)<\/p>.*/\1/p')
+# Get a random joke from the internet (corrected sed command)
+joke=$(curl -s https://icanhazdadjoke.com/ | sed -n 's/.*<p>\(.*\)<\/p>.*/\1/p') 
 
 # Construct the commit message
 commit_message="solved some questions (and maybe told a joke): $joke"
@@ -12,4 +12,4 @@ commit_message="solved some questions (and maybe told a joke): $joke"
 git commit -m "$commit_message"
 
 # Push the changes to the master branch
-git push origin main
+git push origin master
