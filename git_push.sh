@@ -3,7 +3,7 @@
 git add .  # Stage all changes 
 
 # Get a random programming joke from jokeapi.dev
-joke_json=$(curl -s -H "Accept: application/json" "https://v2.jokeapi.dev/joke/Programming?blacklistFlags=nsfw,religious,political,racist,sexist")
+joke_json=$(curl -s -H "Accept: application/json" "https://v2.jokeapi.dev/joke/Programming")
 
 # Extract the joke based on the type (single or twopart) using jq
 joke_type=$(echo "$joke_json" | jq -r '.type')
