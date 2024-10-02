@@ -5,13 +5,12 @@ n = len(dna)
 if n <= 1:  # Handle empty or single-character strings
     print(n)
 else:
-    left, right = 0, 0
-    max_length = 1  # Initialize with 1, as a single character is a repetition
-
-    while right < n:
-        if dna[right] == dna[left]:  # While characters are the same
-            max_length = max(max_length, right - left + 1)  # Update max_length
-            right += 1  # Move the right pointer
+    left_pointer, right_pointer = 0, 0
+    max_length = 1
+    while right_pointer < n:
+        if dna[left_pointer] == dna[right_pointer]:
+            max_length = max(max_length, right_pointer - left_pointer + 1)
+            right_pointer += 1
         else:
-            left = right  # Move the left pointer to the right pointer's position
+            left_pointer = right_pointer
     print(max_length)
