@@ -18,8 +18,8 @@ for coord in coords:
         print(ar + add)
     else:
         ar = (x - 1) ** 2
-        if x % 2 != 0:
-            add = x
+        if x % 2 == 0:
+            add = y
         else:
             add = x * 2 - y
         print(ar + add)
