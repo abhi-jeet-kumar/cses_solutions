@@ -1,12 +1,8 @@
-i = int(input())
-
-def factorial(num):
-    ans = 1
-    for x in range(1, num + 1):
-        ans *= x
-        
-    return ans
-
-fact = str(factorial(i))
-print(fact)
+num = int(input())
+count = 0
+i = 5
+while num // i >= 1:
+    count += num // i
+    i *= 5
+print(count)
         
